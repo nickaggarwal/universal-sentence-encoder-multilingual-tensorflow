@@ -19,7 +19,7 @@ class InferlessPythonModel:
             responses = []
             response_contexts = []
             # instances = '[{"input": "hello", "context": "how are you"}]'
-            instances = json.loads(test_string)
+            instances = json.loads(instances)
             for instance in instances:
                 responses = instance['input']
                 response_contexts = instance['context']
