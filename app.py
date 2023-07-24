@@ -11,7 +11,8 @@ class InferlessPythonModel:
     def infer(self, inputs):
         signature_name = inputs['signature_name']
         instances = inputs['instances']
-
+        instances = json.loads(instances)
+        
         embeddings = []
         if signature_name == 'question_encoder':
             embeddings = self.module.signatures['question_encoder'](tf.constant(instances))
@@ -20,7 +21,6 @@ class InferlessPythonModel:
             response_contexts = []
             # instances = '[{"input": "hello", "context": "how are you"}]'
             
-            instances = json.loads(instances)
             for instance in instances:
                 responses = instance['input']
                 response_contexts = instance['context']
