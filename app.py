@@ -2,6 +2,7 @@ import tensorflow as tf
 import tensorflow_hub as hub
 import numpy as np
 import tensorflow_text
+import json
 
 class InferlessPythonModel:
     def initialize(self):
@@ -17,6 +18,8 @@ class InferlessPythonModel:
         else:
             responses = []
             response_contexts = []
+            # instances = '[{"input": "hello", "context": "how are you"}]'
+            instances = json.loads(test_string)
             for instance in instances:
                 responses = instance['input']
                 response_contexts = instance['context']
