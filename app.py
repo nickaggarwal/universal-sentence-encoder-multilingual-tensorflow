@@ -24,7 +24,7 @@ class InferlessPythonModel:
             embeddings = self.module.signatures['response_encoder'](input=tf.constant(responses), context=tf.constant(response_contexts))
 
         
-        return {"predictions" : embeddings["outputs"]}
+        return {"predictions" : embeddings["outputs"].numpy() }
 
     def finalize(self):
         self.module = None
