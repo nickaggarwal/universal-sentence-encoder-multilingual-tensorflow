@@ -8,6 +8,8 @@ Universal-Sentence-Encoder-Multilingual-QA is a model developed by researchers a
 - **Python>=3.8**. You would need Python to customize the code in the app.py according to your needs.
 - **Curl**. You would need Curl if you want to make API calls from the terminal itself.
 
+
+
 ---
 ## Quick Start
 Here is a quick start to help you get up and running with this template on Inferless.
